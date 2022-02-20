@@ -45,6 +45,8 @@ if __name__ == '__main__':
         words = list(filter(constraint, words))
 
     print(f"Left with {len(words)} words")
+    if len(words) < 10:
+        print(f"Here they are: {', '.join(words)}")
     guess = random.choice(words)
 
-    print(f"Guess: {guess}")
+    print(f"How about you guess: '{guess}' ?")
