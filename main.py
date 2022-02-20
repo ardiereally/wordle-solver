@@ -27,9 +27,13 @@ def wrong_spot(char, pos):
     return f
 
 
-def doesnt_contain(char):
+def doesnt_contain(char, already_has=0):
+    assert type(already_has) is int
+    # there are either 0 occurrences of this char or however many we have already found but no more
+    # first case is handled by the default arg, otherwise we check for the general condition
+
     def f(word):
-        return char not in word
+        return word.count(char) == already_has
 
     return f
 
