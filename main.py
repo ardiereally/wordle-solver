@@ -38,6 +38,12 @@ def doesnt_contain(char, already_has=0):
     return f
 
 
+def doesnt_contain_any(*chars):
+    def f(word):
+        return all(c not in word for c in chars)
+    return f
+
+
 if __name__ == '__main__':
     words = load_words()
     constraint_list = [
